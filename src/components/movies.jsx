@@ -3,6 +3,7 @@ import Like from "./common/like";
 import {getMovies} from "../services/fakeMovieService";
 import Pagination from "./common/pagination";
 import {paginator} from "../utils/paginator";
+import {Link} from "react-router-dom";
 
 export default class Movies extends Component {
     state = {
@@ -35,6 +36,7 @@ export default class Movies extends Component {
 
         return (
             <React.Fragment>
+                <h1>Movies</h1>
                 <p>Showing {count} movies</p>
                 <table className="table">
                     <thead>
@@ -50,7 +52,7 @@ export default class Movies extends Component {
                     <tbody>
                     {movies.map((movie) => (
                         <tr key={movie._id}>
-                            <td>{movie.title}</td>
+                            <td><Link to={`/movies/${movie._id}`} >{movie.title}</Link></td>
                             <td>{movie.genre.name}</td>
                             <td>{movie.numberInStock}</td>
                             <td>{movie.dailyRentalRate}</td>

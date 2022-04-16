@@ -7,7 +7,7 @@ class Pagination extends Component {
         const {itemsCount, pageSize, currentPage, onPageChange} = this.props;
         const pagesCount = Math.ceil(itemsCount / pageSize);
 
-        if (pagesCount === 0) {
+        if (pagesCount < 2) {
             return null;
         }
 
@@ -18,7 +18,7 @@ class Pagination extends Component {
                 <ul className="pagination">
                     {pages.map(page => (
                         <li className={page === currentPage ? 'page-item active' : 'page-item'} key={page}>
-                            <a className="page-link" onClick={() => onPageChange(page)}>{page}</a>
+                            <a className="page-link" onClick={() => onPageChange(page)} href="javascript:void(0);">{page}</a>
                         </li>
                     ))}
                 </ul>
