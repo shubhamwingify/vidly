@@ -7,6 +7,7 @@ import Rentals from "./components/rentals";
 import NotFound from "./components/notFound";
 import MovieForm from "./MovieForm";
 import LoginForm from "./components/LoginForm";
+import RegisterForm from "./components/RegisterForm";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <main className="container mt-3">
                 {/*Match first route from inside routes */}
                 <Switch>
+                    <Route path="/register" component={RegisterForm}/>
                     <Route path="/login" component={LoginForm}/>
                     <Route path="/movies/:id" component={MovieForm}/>
                     <Route path="/movies" component={Movies}/>

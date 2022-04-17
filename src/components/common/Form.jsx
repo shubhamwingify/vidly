@@ -70,6 +70,12 @@ class Form extends Component {
                    handleChange={this.handleChange} label={label} placeholder={`Enter ${label}`}/>
         )
     }
+
+    renderSubmitButton = (text) => {
+        return (
+            <button type="submit" disabled={this.validate()} className="btn btn-primary">{text}</button>
+        )
+    }
 }
 
 export default Form;
