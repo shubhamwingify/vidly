@@ -6,8 +6,8 @@ import Customers from "./components/customers";
 import Rentals from "./components/rentals";
 import NotFound from "./components/notFound";
 import MovieForm from "./MovieForm";
-import LoginForm from "./components/LoginForm";
-import RegisterForm from "./components/RegisterForm";
+import LoginForm from "./components/loginForm";
+import RegisterForm from "./components/registerForm";
 
 function App() {
     return (
