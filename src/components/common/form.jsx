@@ -24,10 +24,8 @@ class Form extends Component {
     }
 
     validateProperty({name, value}) {
-        console.log(name, value);
         const obj = {[name]: value};
         const tempSchema = {[name]: this.schema[name]};
-        console.log(name, value, tempSchema);
         const {error} = Joi.validate(obj, tempSchema);
         return error ? error.details[0].message : null;
     }
@@ -46,7 +44,6 @@ class Form extends Component {
     handleChange = (e) => {
         const target = e.currentTarget;
         const errors = {...this.state.errors};
-        console.log(target);
         const errorMessage = this.validateProperty(target);
         if (errorMessage) {
             errors[target.name] = errorMessage;
@@ -66,7 +63,7 @@ class Form extends Component {
         const {data, errors} = this.state;
         return (
             <Input value={data[name]} type="text" name={name}
-                   errorMessage={errors[name]}
+                   errorMessage={errors && errors[name]}
                    handleChange={this.handleChange} label={label} placeholder={`Enter ${label}`}/>
         )
     }
