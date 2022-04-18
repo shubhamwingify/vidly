@@ -5,7 +5,7 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import Customers from "./components/customers";
 import Rentals from "./components/rentals";
 import NotFound from "./components/notFound";
-import MovieForm from "./MovieForm";
+import MovieForm from "./components/movieForm";
 import LoginForm from "./components/loginForm";
 import RegisterForm from "./components/registerForm";
 

@@ -18,9 +18,9 @@ export default class Movies extends Component {
     }
 
     likeMovie = (id) => {
-        const movieIndex = this.state.movies.findIndex(movie => movie._id === id);
-        this.state.movies[movieIndex].liked = !this.state.movies[movieIndex].liked;
-        this.setState({movies: this.state.movies});
+        //  const movieIndex = this.state.movies.findIndex(movie => movie._id === id);
+        // this.state.movies[movieIndex].liked = !this.state.movies[movieIndex].liked;
+        //  this.setState({movies: this.state.movies});
     }
 
     handlePageChange = (page) => {
@@ -36,6 +36,7 @@ export default class Movies extends Component {
 
         return (
             <React.Fragment>
+                <Link to="/movies/new" className="btn btn-primary">New Movie</Link>
                 <h1>Movies</h1>
                 <p>Showing {count} movies</p>
                 <table className="table">
@@ -52,7 +53,7 @@ export default class Movies extends Component {
                     <tbody>
                     {movies.map((movie) => (
                         <tr key={movie._id}>
-                            <td><Link to={`/movies/${movie._id}`} >{movie.title}</Link></td>
+                            <td><Link to={`/movies/${movie._id}`}>{movie.title}</Link></td>
                             <td>{movie.genre.name}</td>
                             <td>{movie.numberInStock}</td>
                             <td>{movie.dailyRentalRate}</td>
